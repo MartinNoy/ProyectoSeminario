@@ -313,6 +313,7 @@ class App(object):
             if self.gameStart:
                 self.resetGame()
                 self.gameOver = False
+                self.gameWin = False
                 self.displaySurf.fill(BGCOLOR)
                 self.introMessage1.draw(self.displaySurf)
                 self.introMessage2.draw(self.displaySurf)
@@ -328,6 +329,7 @@ class App(object):
                 if (pygame.time.get_ticks() - self.gameOverTime) > 2000:
                     self.gameOverInput()
                 pygame.display.update()
+
             #si perdes muestra mensaje
             elif self.gameOver:
                 self.playIntroSound = True
